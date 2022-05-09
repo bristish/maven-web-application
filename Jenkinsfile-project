@@ -24,10 +24,7 @@ pipeline {
 
          }
      }
-    post{
-       always
-    }
-    
+   
    }
  
 }

@@ -34,7 +34,7 @@ pipeline {
 
          }
      }
-      post {
+      /*post {
          always {
 
                echo 'always send notification to developers'
@@ -45,7 +45,7 @@ pipeline {
          success{
 
          }
-     }
+     }*/
     
     }
  

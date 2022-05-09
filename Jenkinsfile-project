@@ -42,7 +42,7 @@ stages {
         sh "${mavenHome}/bin/mvn clean package"
     }
    
-   */stage('CodeQuality') {
+   stage('CodeQuality') {
      //sh "${mavenHome}/bin/mvn sonar:sonar"  
     }
     stage('UploadArtifact') {
@@ -61,4 +61,4 @@ stages {
     stage('prod-Deploy'){
       // deploy adapters: [tomcat9(credentialsId: 'Tomcat', path: '', url: 'http://54.163.153.183:8080/')], contextPath: null, war: 'target/*war'
     }
-}
+}*/

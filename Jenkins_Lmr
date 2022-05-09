@@ -25,6 +25,7 @@ pipeline {
 
              steps {
                  echo 'testing the application'
+		 echo "testing with ${SERVER_CREDENTIALS}"
        }
   }
         stage('Deploy'){

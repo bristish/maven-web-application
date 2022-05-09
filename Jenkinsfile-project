@@ -1,4 +1,39 @@
-node {
+pipeline{
+
+agent{
+
+stages{
+
+  stage('build'){
+      
+    steps{
+     echo 'building the application'
+	}
+  }
+  
+  stage('Test'){
+
+  steps{
+     echo 'testing the application'
+   }
+  }
+  stage('Test'){
+
+  steps{
+     echo 'testing the application'
+
+       }
+     }
+    
+   }
+ }
+}
+
+
+
+
+
+/*node {
     def mavenHome = tool name: 'maven3.6.2'
     stage('CodeClone') {
         git credentialsId: 'GITHUB-CRED', url: 'https://github.com/bristish/maven-web-application'
@@ -6,7 +41,8 @@ node {
     stage('mavenBuild') {
         sh "${mavenHome}/bin/mvn clean package"
     }
-    stage('CodeQuality') {
+   
+   */stage('CodeQuality') {
      //sh "${mavenHome}/bin/mvn sonar:sonar"  
     }
     stage('UploadArtifact') {

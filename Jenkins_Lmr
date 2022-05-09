@@ -1,6 +1,10 @@
 pipeline {
 
     agent any
+    environment {
+        NEW_VERSION = '1.0.0'
+        SERVER_CREDENTIALS = credentials('server-credentials')
+    }
 
     stages {
 
@@ -8,10 +12,16 @@ pipeline {
       
             steps {
                 echo 'building the application'
+                echo "building version ${NEW_VERSION}"
 	}
   }
   
         stage('Test') {
+            when {
+                expression {
+                    BRANCH_NAME == 'DEV'
+                }
+            }	    
 
              steps {
                  echo 'testing the application'
@@ -24,7 +34,18 @@ pipeline {
 
          }
      }
-   
-   }
+     post {
+         always {
+
+               echo 'always send notification to developers'
+         }
+         falure {
+
+         }
+         success{
+
+         }
+     }
+    }
  
 }
